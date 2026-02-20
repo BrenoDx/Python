@@ -1,13 +1,34 @@
 from service import converter_para_real
+import tkinter as tk
 
-print("============================================")
-print("Olá, seja bem-vindo ao Conversor de Moedas!")
-print("Escolha moeda que deseja fazer converter:")
-print("Moedas disponíveis 'USD' Dólar, 'EUR' Euro, 'GBP' libra")
-print("============================================")
+def converter():
+    moeda = entrada_moeda.get()
+    valor = float(entrada_valor.get())
+    resultado = converter_para_real(moeda, valor)
 
-moeda = input("Selecione a moeda desejada(Ex: USD, EUR, GBP): ").upper()
-valor = float(input("Informe o valor que deseja converter: "))
+    valor_convertido.config(text=f"Valor convertido: R${resultado:.2f}")
 
-resultado = converter_para_real(moeda, valor)
-print(f"Resultado: R$ {resultado:.2f}")
+janela = tk.Tk()
+janela.title("Conversor de Moedas")
+janela.geometry("500x400")
+
+
+msg = tk.Label(janela, text="Olá, seja bem-vindo ao Conversor de Moedas!")
+inicio = tk.Label(janela, text="Moedas disponíveis 'USD' Dólar, 'EUR' Euro, 'GBP' libra")
+entrada_moeda = tk.Entry(janela)
+entrada_valor = tk.Entry(janela)
+botao = tk.Button(janela, text="Converter", command=converter)
+
+
+valor_convertido = tk.Label(janela, text="")
+
+msg.pack(pady=10)
+inicio.pack(pady=15)
+entrada_moeda.pack()
+entrada_valor.pack(pady=5)
+botao.pack(pady=30)
+valor_convertido.pack(pady=5)
+janela.mainloop()
+
+
+

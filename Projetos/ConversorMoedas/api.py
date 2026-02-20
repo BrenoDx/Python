@@ -8,5 +8,5 @@ def buscar_taxa(moeda_origem):
         dados = resposta.json()
         return dados["rates"]["BRL"]
     else:
-        print(resposta)
         return None
+
