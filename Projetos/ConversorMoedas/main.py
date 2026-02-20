@@ -4,11 +4,14 @@ from tkinter import ttk
 
 def converter():
     # Função executada ao clicar no botão "Converter"
-    moeda = entrada_moeda.get()
-    valor = float(entrada_valor.get())
-    resultado = converter_para_real(moeda, valor)
+    try:
+        moeda = entrada_moeda.get()
+        valor = float(entrada_valor.get())
+        resultado = converter_para_real(moeda, valor)
 
-    valor_convertido.config(text=f"Valor convertido: R${resultado:.2f}")
+        valor_convertido.config(text=f"Valor convertido: R${resultado:.2f}")
+    except ValueError:
+        valor_convertido.config(text=f"Erro! Digite um valor válido")
 
 def centralizar_janela(janela, largura, altura):
     # Obtém dimensões da tela para centralizar
