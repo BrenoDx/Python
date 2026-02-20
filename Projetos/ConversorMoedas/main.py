@@ -1,5 +1,6 @@
 from service import converter_para_real
 import tkinter as tk
+from tkinter import ttk
 
 def converter():
     moeda = entrada_moeda.get()
@@ -21,22 +22,27 @@ largura = 500
 altura = 400
 centralizar_janela(janela, largura, altura)
 
-
-msg = tk.Label(janela, text="Olá, seja bem-vindo ao Conversor de Moedas!")
-inicio = tk.Label(janela, text="Moedas disponíveis 'USD' Dólar, 'EUR' Euro, 'GBP' libra")
-entrada_moeda = tk.Entry(janela)
-entrada_valor = tk.Entry(janela)
-botao = tk.Button(janela, text="Converter", command=converter)
+frame = ttk.Frame(janela, padding=20)
+frame.pack()
 
 
-valor_convertido = tk.Label(janela, text="")
+ttk.Label(frame, text="Olá, seja bem-vindo ao Conversor de Moedas!", font=("Segoe UI", 12, "bold")).grid(row=0, column=1, columnspan=2, pady=10)
 
-msg.pack(pady=10)
-inicio.pack(pady=15)
-entrada_moeda.pack()
-entrada_valor.pack(pady=5)
-botao.pack(pady=30)
-valor_convertido.pack(pady=5)
+ttk.Label(frame, text="Moeda:").grid(row=1, column=0, sticky="w", pady=5)
+entrada_moeda = ttk.Entry(frame)
+entrada_moeda.grid(row=1, column=1, pady=5)
+
+ttk.Label(frame, text="Valor:").grid(row=2, column=0, sticky="w", pady=5)
+entrada_valor = ttk.Entry(frame)
+entrada_valor.grid(row=2, column=1, pady=5)
+
+botao = ttk.Button(frame, text="Converter", command=converter)
+botao.grid(row=3, column=0, columnspan=2, pady=15)
+
+valor_convertido = ttk.Label(frame, text="")
+valor_convertido.grid(row=4, column=3, columnspan=2, pady=10)
+
+
 janela.mainloop()
 
 
