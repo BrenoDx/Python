@@ -32,21 +32,22 @@ frame = ttk.Frame(janela, padding=20)
 frame.pack()
 
 
-ttk.Label(frame, text="Olá, seja bem-vindo ao Conversor de Moedas!", font=("Segoe UI", 12, "bold")).grid(row=0, column=0, columnspan=2, pady=10)
-
+ttk.Label(frame, text="Olá, seja bem-vindo ao Conversor de Moedas!", font=("Segoe UI", 12, "bold")).grid(row=0, column=0, columnspan=2, pady=5)
+ttk.Label(frame, text="USD, EUR, GBP", font=("Segoe UI", 9, "bold")).grid(row=1, column=0, columnspan=2, pady=5)
 # Campos de entrada de dados
-ttk.Label(frame, text="Moeda:").grid(row=1, column=0, sticky="w", pady=5)
+ttk.Label(frame, text="Moeda:").grid(row=2, column=0, sticky="w", pady=3)
 entrada_moeda = ttk.Entry(frame)
-entrada_moeda.grid(row=1, column=1, pady=5)
-ttk.Label(frame, text="Valor:").grid(row=2, column=0, sticky="w", pady=5)
+entrada_moeda.grid(row=2, column=1, pady=5)
+ttk.Label(frame, text="Valor:").grid(row=3, column=0, sticky="w", pady=3)
 entrada_valor = ttk.Entry(frame)
-entrada_valor.grid(row=2, column=1, pady=5)
+entrada_valor.grid(row=3, column=1, pady=5)
 
 botao = ttk.Button(frame, text="Converter", command=converter)
-botao.grid(row=3, column=0, columnspan=2, pady=15)
+botao.grid(row=4, column=0, columnspan=2, pady=15)
 
 valor_convertido = ttk.Label(frame, text="")
-valor_convertido.grid(row=4, column=0, columnspan=2, pady=10)
+valor_convertido.grid(row=5, column=0, columnspan=2, pady=10)
+
 
 
 janela.mainloop()
