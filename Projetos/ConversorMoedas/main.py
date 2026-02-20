@@ -8,9 +8,18 @@ def converter():
 
     valor_convertido.config(text=f"Valor convertido: R${resultado:.2f}")
 
+def centralizar_janela(janela, largura, altura):
+    x = (janela.winfo_screenwidth() // 2) - (largura // 2)
+    y = (janela.winfo_screenheight() // 2) - (altura // 2)
+
+    janela.geometry(f"{largura}x{altura}+{x}+{y}")
+
+
 janela = tk.Tk()
 janela.title("Conversor de Moedas")
-janela.geometry("500x400")
+largura = 500
+altura = 400
+centralizar_janela(janela, largura, altura)
 
 
 msg = tk.Label(janela, text="Olá, seja bem-vindo ao Conversor de Moedas!")
