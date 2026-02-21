@@ -43,3 +43,6 @@ This project focuses on:
 
 
 ## 📷 Preview
+<p align="center">
+  <img src="assets/Conversor.png" width="600"/>
+</p>
