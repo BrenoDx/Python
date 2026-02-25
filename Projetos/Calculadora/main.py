@@ -1,4 +1,4 @@
-from calculadora import somar,multiplicar,divide,subtrair
+from calculadora import calculadora
 loop = True
 
 print("======Calculadora======")
@@ -9,9 +9,9 @@ while loop:
         n2 = float(input("Informe o segundo número:\n"))
 
         if opcao == 1:
-            print(f"Resultado é: {somar(n1,n2)}")
+            print(f"Resultado é: {calculadora.somar(n1,n2)}")
         elif opcao == 2:
-            print(f"Resultado é: {subtrair(n1,n2)}")
+            print(f"Resultado é: {calculadora.subtrair(n1,n2)}")
 
             
         if opcao == 5:
