@@ -10,7 +10,10 @@ while loop:
 
         if opcao == 1:
             print(f"Resultado é: {somar(n1,n2)}")
+        elif opcao == 2:
+            print(f"Resultado é: {subtrair(n1,n2)}")
 
+            
         if opcao == 5:
             print("Finalizando o programa")
             break
