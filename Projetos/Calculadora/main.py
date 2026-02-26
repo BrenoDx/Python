@@ -14,7 +14,8 @@ while loop:
             print(f"Resultado é: {calculadora.subtrair(n1,n2)}")
         elif opcao == 3:
             print(f"Resultado é: {calculadora.divide(n1,n2)}")
-          
+        elif opcao == 4:
+            print(f"Resultado é: {calculadora.multiplicar(n1,n2)}") 
         if opcao == 5:
             print("Finalizando o programa")
             break
