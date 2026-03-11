@@ -1,3 +1,4 @@
+import copy
 # Aumente os preços dos produtos a seguir em 10%
 # Gere novos_produtos por deep copy
 
@@ -8,7 +9,8 @@ produtos = [
         {'nome': 'Produto 2', 'preco':105.87},
         {'nome': 'Produto 4', 'preco':69.90}
 ]
-
+novos_produtos = [ {**p, 'preco': round(p['preco']*1.1, 2)} for p in copy.deepcopy(produtos) ]
+print(novos_produtos)
 # Ordene os produtos por nome descrescente (do maior para o menor)
 # Gere Produtos_ordenados_por_nome por deep copy 
 
