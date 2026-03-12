@@ -6,8 +6,8 @@ def limpar_tela():
 
 print('==========Seja bem-vindo ao jogo de Advinhação==========')
 tentativas = 10
-numero_secreto = random.randint(1,10)
-print(numero_secreto)
+numero_secreto = random.randint(1,20)
+
 
 for i in range(9, -1, -1):
     print(f'Você tem {tentativas} tentativas\nEscolha um número entre 0 a 20')
@@ -22,15 +22,13 @@ for i in range(9, -1, -1):
             print('Parabéns vc acertou o número')
             print(f'Faltando {tentativas} tentativas!')
             break
-        elif tentativas == 0:
-            limpar_tela()
-            print(f'Acabaram as tentativas que pena\nO número era: {numero_secreto}')
         else:
             print('Errou, tenta novamente!')
     else:
         print('Informe um número correto')
 
-        
-
+if tentativas == 0:
+            limpar_tela()
+            print(f'Acabaram as tentativas que pena!\nO número era: {numero_secreto}')
 
 
