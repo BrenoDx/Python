@@ -19,11 +19,13 @@ for i in range(9, -1, -1):
         
         if int(escolha) == numero_secreto:
             limpar_tela()
-            print('Parabéns vc acertou o número')
+            print(f'Parabéns vc acertou o número secreto: {numero_secreto}')
             print(f'Faltando {tentativas} tentativas!')
             break
+        elif int(escolha) > numero_secreto:
+            print(f'Errou, número secreto é menor que {escolha}')
         else:
-            print('Errou, tenta novamente!')
+             print(f'Errou, número secreto é maior que {escolha}')
     else:
         print('Informe um número correto')
 
