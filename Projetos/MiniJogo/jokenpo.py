@@ -1,5 +1,8 @@
+import os
 import random
 
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 vitoria = 0
 derrota = 0
@@ -41,5 +44,6 @@ while jogar:
     if escolha.lower() == 'n':
         jogar = False
 
+limpar_tela()
 print('==========Resultado Final ==========')
 print(f'Você teve {vitoria} vitória[s], {empate} empate[s] e {derrota} derrota[s] ')
